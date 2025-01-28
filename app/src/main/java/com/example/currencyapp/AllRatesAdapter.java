@@ -32,7 +32,7 @@ public class AllRatesAdapter extends RecyclerView.Adapter<AllRatesAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ExchangeRatesTable.Rate rate = rateList.get(position);
         holder.text1.setText(rate.getCode());
-        holder.text2.setText(String.valueOf(rate.getMid()));
+        holder.text2.setText(String.format("1 %s = %.4f PLN", rate.getCode(), rate.getMid()));
     }
 
     @Override

@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         });
 
         showMapButton.setOnClickListener(v -> {
-            String targetCode = selectedTargetCurrency; // np. "EUR"
+            String targetCode = selectedTargetCurrency;
             Intent intent = new Intent(MainActivity.this, MapsActivity.class);
             intent.putExtra("currency_code", targetCode);
             startActivity(intent);
@@ -161,7 +161,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                         spinnerItems.add(displayText);
                     }
 
-                    // Dodaj też PLN
                     ratesMap.put("PLN", 1.0);
                     spinnerItems.add("PLN (złoty polski)");
 
@@ -172,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             @Override
             public void onFailure(Call<List<ExchangeRatesTable>> call, Throwable t) {
                 Log.e("NBP", "Błąd podczas pobierania kursów", t);
-                Toast.makeText(MainActivity.this, "Błąd sieci: nie mogę pobrać kursów", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Błąd sieci: nie można pobrać kursów", Toast.LENGTH_SHORT).show();
             }
         });
     }
